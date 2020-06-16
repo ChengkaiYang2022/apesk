@@ -70,11 +70,11 @@ DOWNLOAD_DELAY = 1
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
+AUTOTHROTTLE_MAX_DELAY = 30
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
@@ -90,8 +90,8 @@ DOWNLOAD_DELAY = 1
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 # TODO HEADoffset 与Tail offset需要做到动态获取
 # HEADOFFSET = 10000
-HEADOFFSET = 759900
-TAILOFFSET = 760000
+HEADOFFSET = 389179
+TAILOFFSET = 389181
 
 
 SEARCH_URL_FORMAT = "http://www.apesk.com/mensa/common_report_getid/youshi_report_admin.asp?id={0}"
@@ -110,3 +110,4 @@ SEARCH_HEADERS = {
 }
 
 TASKID = "init"
+LOG_LEVEL = 'DEBUG'
