@@ -90,8 +90,8 @@ AUTOTHROTTLE_MAX_DELAY = 7
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 # TODO HEADoffset 与Tail offset需要做到动态获取
 # HEADOFFSET = 10000
-HEADOFFSET = 4
-TAILOFFSET = 10000
+HEADOFFSET = 462
+TAILOFFSET = 389181
 
 
 SEARCH_URL_FORMAT = 'http://www.apesk.com/mensa/common_report_getid/youshi_report_admin.asp?id={0}'
