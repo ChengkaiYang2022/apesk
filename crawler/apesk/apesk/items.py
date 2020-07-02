@@ -26,7 +26,8 @@ class AdvantageScoreItem(scrapy.Item):
     advantage_name = scrapy.Field()
     # 分数
     score = scrapy.Field()
-    # url = scrapy.Field()
+    # url字段(备用)
+    url = scrapy.Field()
 
     pass
 

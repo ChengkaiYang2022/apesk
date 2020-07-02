@@ -22,12 +22,12 @@ NEWSPIDER_MODULE = 'apesk.spiders'
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 4
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -64,9 +64,9 @@ DOWNLOAD_DELAY = 1
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'apesk.pipelines.ApeskPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'apesk.pipelines.MysqlPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -74,7 +74,7 @@ AUTOTHROTTLE_ENABLED = True
 # The initial download delay
 AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-AUTOTHROTTLE_MAX_DELAY = 30
+AUTOTHROTTLE_MAX_DELAY = 7
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
@@ -90,11 +90,11 @@ AUTOTHROTTLE_MAX_DELAY = 30
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 # TODO HEADoffset 与Tail offset需要做到动态获取
 # HEADOFFSET = 10000
-HEADOFFSET = 389179
-TAILOFFSET = 389181
+HEADOFFSET = 4
+TAILOFFSET = 10000
 
 
-SEARCH_URL_FORMAT = "http://www.apesk.com/mensa/common_report_getid/youshi_report_admin.asp?id={0}"
+SEARCH_URL_FORMAT = 'http://www.apesk.com/mensa/common_report_getid/youshi_report_admin.asp?id={0}'
 SEARCH_HEADERS = {
     # 'Host': 'xin.baidu.com',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -109,5 +109,11 @@ SEARCH_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
 }
 
-TASKID = "init"
-LOG_LEVEL = 'DEBUG'
+TASKID = 'init'
+# LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
+
+MYSQL_URI = '172.37.3.6'
+MYSQL_DB = 'apesk1'
+MYSQL_USERNAME = 'root'
+MYSQL_PASSWORD = 'root@123'

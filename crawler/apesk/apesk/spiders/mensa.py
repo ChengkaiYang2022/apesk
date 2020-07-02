@@ -32,6 +32,7 @@ class MensaSpider(scrapy.Spider):
         id = response.url.split("id=")[-1]
         name, submit_time = response.xpath("//div[@class='r'][1]//div").xpath('string(.)').extract()
         name, submit_time = name.split(":")[-1], re.search(':.*', submit_time).group(0)[1:]
+        self.logger.info("id:{0},name:{1},submit_time:{2}".format(id, name, submit_time))
         # 解析原始得分表
         for line in response.xpath("//table[@style='border:1px solid #bbb'][1]//tr"):
             line_list = line.xpath("td").xpath("string(.)").extract()
