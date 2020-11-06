@@ -1,0 +1,2 @@
+scrapy==2.1
+pymysql~=0.9
