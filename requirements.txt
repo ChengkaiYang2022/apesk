@@ -1,2 +1,2 @@
-scrapy==2.1
+scrapy==2.6.1
 pymysql~=0.9
